@@ -1,0 +1,16 @@
+; ═══════════════════════════════════════════════════════════════
+; Precios Manuales
+; open-gasti - Starter Kit Argentina
+;
+; Para cotizaciones automáticas del dólar blue:
+;   make prices
+;
+; Luego descomentar en main.bean:
+;   include "prices/auto-generated.bean"
+; ═══════════════════════════════════════════════════════════════
+
+; ─────────────────────────────────────────────────────────────────
+; Cotización inicial USD/ARS (ajustar según fecha de inicio)
+; ─────────────────────────────────────────────────────────────────
+
+2026-01-01 price USD 1200.00 ARS

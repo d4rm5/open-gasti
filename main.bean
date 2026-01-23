@@ -1,0 +1,40 @@
+; ═══════════════════════════════════════════════════════════════
+; open-gasti - Finanzas Personales Argentina
+; https://github.com/d4rm5/open-gasti
+; ═══════════════════════════════════════════════════════════════
+
+; ─────────────────────────────────────────────────────────────────
+; Configuración y Plugins
+; ─────────────────────────────────────────────────────────────────
+include "config/options.bean"
+include "config/accounts.bean"
+include "config/queries.bean"
+
+; ─────────────────────────────────────────────────────────────────
+; Balances Iniciales
+; ─────────────────────────────────────────────────────────────────
+include "transactions/balances.bean"
+
+; ─────────────────────────────────────────────────────────────────
+; Transacciones por Mes
+; Agregar nuevos meses aquí:
+; ─────────────────────────────────────────────────────────────────
+include "transactions/2026/01-january.bean"
+; include "transactions/2026/02-february.bean"
+; include "transactions/2026/03-march.bean"
+; include "transactions/2026/04-april.bean"
+; include "transactions/2026/05-may.bean"
+; include "transactions/2026/06-june.bean"
+; include "transactions/2026/07-july.bean"
+; include "transactions/2026/08-august.bean"
+; include "transactions/2026/09-september.bean"
+; include "transactions/2026/10-october.bean"
+; include "transactions/2026/11-november.bean"
+; include "transactions/2026/12-december.bean"
+
+; ─────────────────────────────────────────────────────────────────
+; Precios
+; ─────────────────────────────────────────────────────────────────
+include "prices/manual.bean"
+; Auto-generated prices (uncomment after running `make prices`):
+; include "prices/auto-generated.bean"

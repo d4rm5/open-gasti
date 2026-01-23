@@ -1,0 +1,151 @@
+; ═══════════════════════════════════════════════════════════════
+; Queries Personalizadas para Fava
+; open-gasti - Starter Kit Argentina
+;
+; Estas queries aparecen en la barra lateral de Fava.
+; Ejecutar con: make queries
+; ═══════════════════════════════════════════════════════════════
+
+; ─────────────────────────────────────────────────────────────────
+; Query 1: Patrimonio Neto en USD
+; ─────────────────────────────────────────────────────────────────
+2020-01-01 query "net-worth-usd" "
+  SELECT
+    root(account, 2) AS tipo,
+    account,
+    sum(convert(position, 'USD')) AS balance_usd
+  WHERE account ~ 'Assets|Liabilities'
+  GROUP BY tipo, account
+  ORDER BY balance_usd DESC
+"
+
+; ─────────────────────────────────────────────────────────────────
+; Query 2: Gastos del Mes Actual
+; ─────────────────────────────────────────────────────────────────
+2020-01-01 query "gastos-mes-actual" "
+  SELECT
+    root(account, 2) AS categoria,
+    sum(convert(position, 'ARS')) AS total_ars
+  WHERE account ~ 'Expenses' 
+    AND year = YEAR(today()) 
+    AND month = MONTH(today())
+  GROUP BY categoria
+  ORDER BY total_ars DESC
+"
+
+; ─────────────────────────────────────────────────────────────────
+; Query 3: Cuotas Pendientes (usa tag #cuotas)
+; ─────────────────────────────────────────────────────────────────
+2020-01-01 query "cuotas-pendientes" "
+  SELECT
+    date,
+    payee,
+    narration,
+    account,
+    position
+  WHERE 
+    'cuotas' IN tags
+    AND date >= TODAY()
+    AND account ~ 'Expenses'
+  ORDER BY date
+"
+
+; ─────────────────────────────────────────────────────────────────
+; Query 4: Burn Rate Mensual (últimos 12 meses)
+; ─────────────────────────────────────────────────────────────────
+2020-01-01 query "burn-rate-mensual" "
+  SELECT
+    year(date) AS anio,
+    month(date) AS mes,
+    sum(convert(position, 'ARS')) AS gastos_ars
+  WHERE account ~ 'Expenses'
+  GROUP BY anio, mes
+  ORDER BY anio DESC, mes DESC
+  LIMIT 12
+"
+
+; ─────────────────────────────────────────────────────────────────
+; Query 5: Ingresos vs Gastos por Mes
+; ─────────────────────────────────────────────────────────────────
+2020-01-01 query "ingresos-vs-gastos" "
+  SELECT
+    year(date) AS anio,
+    month(date) AS mes,
+    -sum(position) FILTER (WHERE account ~ 'Income') AS ingresos,
+    sum(position) FILTER (WHERE account ~ 'Expenses') AS gastos
+  WHERE currency = 'ARS'
+  GROUP BY anio, mes
+  ORDER BY anio DESC, mes DESC
+  LIMIT 12
+"
+
+; ─────────────────────────────────────────────────────────────────
+; Query 6: Deudas por Tarjeta
+; ─────────────────────────────────────────────────────────────────
+2020-01-01 query "deudas-tarjetas" "
+  SELECT
+    account,
+    currency,
+    sum(position) AS saldo
+  WHERE account ~ 'Liabilities:AR:CreditCard'
+  GROUP BY account, currency
+  ORDER BY account
+"
+
+; ─────────────────────────────────────────────────────────────────
+; Query 7: Transacciones Recientes (últimos 30 días)
+; ─────────────────────────────────────────────────────────────────
+2020-01-01 query "transacciones-recientes" "
+  SELECT
+    date,
+    payee,
+    narration,
+    account,
+    position
+  WHERE date >= TODAY() - 30
+  ORDER BY date DESC
+  LIMIT 50
+"
+
+; ─────────────────────────────────────────────────────────────────
+; Query 8: Savings Rate (para tracking de ahorro en USD)
+; ─────────────────────────────────────────────────────────────────
+2020-01-01 query "savings-rate" "
+  SELECT
+    year(date) AS anio,
+    month(date) AS mes,
+    -sum(position) FILTER (WHERE account ~ 'Income:Freelance|Income:AR:Trabajo' AND currency = 'USD') AS income_usd,
+    sum(position) FILTER (WHERE account ~ 'Assets:Investments' AND currency = 'USD') AS invested_usd
+  WHERE year >= 2026
+  GROUP BY anio, mes
+  ORDER BY anio DESC, mes DESC
+"
+
+; ─────────────────────────────────────────────────────────────────
+; Query 9: Balance por Moneda
+; ─────────────────────────────────────────────────────────────────
+2020-01-01 query "balance-por-moneda" "
+  SELECT
+    currency,
+    sum(position) AS total
+  WHERE account ~ 'Assets'
+  GROUP BY currency
+  ORDER BY currency
+"
+
+; ─────────────────────────────────────────────────────────────────
+; Query 10: Top 10 Gastos del Mes
+; ─────────────────────────────────────────────────────────────────
+2020-01-01 query "top-gastos-mes" "
+  SELECT
+    date,
+    payee,
+    narration,
+    sum(convert(position, 'ARS')) AS monto
+  WHERE account ~ 'Expenses'
+    AND year = YEAR(today())
+    AND month = MONTH(today())
+  GROUP BY date, payee, narration
+  ORDER BY monto DESC
+  LIMIT 10
+"

@@ -1,0 +1,112 @@
+; ═══════════════════════════════════════════════════════════════
+; Definiciones de Cuentas - Argentina
+; open-gasti Starter Kit
+;
+; INSTRUCCIONES:
+; 1. Renombrar "Primary", "Secondary", "Wallet" a tus bancos reales
+; 2. Agregar o quitar cuentas según tu situación
+; 3. Mantener la estructura Assets:AR:... para cuentas argentinas
+; ═══════════════════════════════════════════════════════════════
+
+; ─────────────────────────────────────────────────────────────────
+; ASSETS - Activos
+; ─────────────────────────────────────────────────────────────────
+
+; Bancos (renombrar Primary/Secondary/Wallet a tu banco)
+; Ejemplos: Galicia, Santander, BBVA, Macro, Nacion, HSBC
+2020-01-01 open Assets:AR:Bank:Primary:ARS                    ARS
+2020-01-01 open Assets:AR:Bank:Primary:USD                    USD
+2020-01-01 open Assets:AR:Bank:Secondary:ARS                  ARS
+2020-01-01 open Assets:AR:Bank:Wallet:ARS                     ARS  ; MercadoPago, Ualá, Naranja X, etc.
+
+; Efectivo
+2020-01-01 open Assets:AR:Cash:ARS                            ARS
+2020-01-01 open Assets:AR:Cash:USD                            USD
+
+; Inversiones
+2020-01-01 open Assets:Investments:Stocks:USD                 USD
+2020-01-01 open Assets:Investments:Tactical:USD               USD
+2020-01-01 open Assets:Investments:SelfDev:USD                USD
+2020-01-01 open Assets:Emergency:USD                          USD
+
+; ─────────────────────────────────────────────────────────────────
+; LIABILITIES - Pasivos
+; ─────────────────────────────────────────────────────────────────
+
+; Tarjetas de crédito (renombrar a tus tarjetas)
+; Ejemplos: Visa, Mastercard, Amex, Naranja
+2020-01-01 open Liabilities:AR:CreditCard:Primary             ARS
+2020-01-01 open Liabilities:AR:CreditCard:Secondary           ARS, USD
+2020-01-01 open Liabilities:AR:CreditCard:Wallet              ARS, USD  ; Ualá, MP, Naranja X
+
+; Préstamos
+2020-01-01 open Liabilities:AR:Loans:Personal                 ARS
+2020-01-01 open Liabilities:AR:Loans:Family                   ARS
+
+; ─────────────────────────────────────────────────────────────────
+; INCOME - Ingresos
+; ─────────────────────────────────────────────────────────────────
+
+2020-01-01 open Income:AR:Trabajo                             ARS, USD
+2020-01-01 open Income:AR:Becas                               ARS
+2020-01-01 open Income:AR:Reintegros                          ARS
+2020-01-01 open Income:AR:Venta                               ARS, USD
+2020-01-01 open Income:AR:Regalo                              ARS, USD
+2020-01-01 open Income:AR:Otros                               ARS
+2020-01-01 open Income:AR:Interest:ARS                        ARS
+2020-01-01 open Income:AR:Interest:USD                        USD
+2020-01-01 open Income:Freelance:USD                          USD
+2020-01-01 open Income:Reintegro                              ARS
+2020-01-01 open Income:Otros                                  ARS
+2020-01-01 open Income:Regalo                                 ARS
+
+; ─────────────────────────────────────────────────────────────────
+; EXPENSES - Gastos
+; ─────────────────────────────────────────────────────────────────
+
+; Comida
+2020-01-01 open Expenses:Food
+2020-01-01 open Expenses:Food:Restaurants
+2020-01-01 open Expenses:Food:Delivery
+2020-01-01 open Expenses:Food:FastFood
+2020-01-01 open Expenses:Food:Groceries
+
+; Transporte
+2020-01-01 open Expenses:Transport
+
+; Compras
+2020-01-01 open Expenses:Shopping
+2020-01-01 open Expenses:Shopping:Clothing
+2020-01-01 open Expenses:Shopping:Personal
+
+; Servicios
+2020-01-01 open Expenses:Services
+2020-01-01 open Expenses:Services:Subscriptions
+2020-01-01 open Expenses:Services:Internet
+2020-01-01 open Expenses:Subscriptions
+
+; Entretenimiento
+2020-01-01 open Expenses:Entertainment
+2020-01-01 open Expenses:Entertainment:Sports
+2020-01-01 open Expenses:Recitales
+
+; Salud
+2020-01-01 open Expenses:Health
+2020-01-01 open Expenses:Health:Supplements
+
+; Otros
+2020-01-01 open Expenses:Education
+2020-01-01 open Expenses:Technology
+2020-01-01 open Expenses:Gifts
+2020-01-01 open Expenses:FeesAndTaxes
+2020-01-01 open Expenses:Other
+
+; Categorías de presupuesto
+2020-01-01 open Expenses:Living:Essential
+2020-01-01 open Expenses:Living:Quality
+
+; ─────────────────────────────────────────────────────────────────
+; EQUITY
+; ─────────────────────────────────────────────────────────────────
+
+2020-01-01 open Equity:Opening-Balances

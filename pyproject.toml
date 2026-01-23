@@ -1,0 +1,33 @@
+[project]
+name = "open-gasti"
+version = "1.0.0"
+description = "Beancount starter kit for Argentina - ARS/USD personal finance with AI workflows"
+readme = "README.md"
+requires-python = ">=3.13"
+license = { text = "MIT" }
+authors = [{ name = "Your Name", email = "you@example.com" }]
+keywords = ["beancount", "argentina", "personal-finance", "fava", "plain-text-accounting"]
+dependencies = [
+    "beancount>=3.2.0",
+    "beanprice>=2.1.0",
+    "fava>=1.30.10",
+    "requests>=2.32.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.1.0",
+]
+mcp = [
+    "beancount-mcp>=0.1.0",
+]
+
+[project.urls]
+Repository = "https://github.com/d4rm5/open-gasti"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]

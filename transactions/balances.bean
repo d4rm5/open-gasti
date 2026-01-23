@@ -1,0 +1,25 @@
+; ═══════════════════════════════════════════════════════════════
+; Balances Iniciales
+; open-gasti - Starter Kit Argentina
+;
+; INSTRUCCIONES:
+; 1. Modificar la fecha al día que empezás a trackear
+; 2. Ajustar los montos a tus balances reales
+; 3. Agregar/quitar cuentas según necesites
+; ═══════════════════════════════════════════════════════════════
+
+; ─────────────────────────────────────────────────────────────────
+; Ejemplo: Balances al 1ro de Enero 2026
+; Usar transacciones de apertura en vez de pad/balance
+; ─────────────────────────────────────────────────────────────────
+
+2026-01-01 * "Opening Balance" "Balance inicial"
+  Assets:AR:Bank:Primary:ARS         0.00 ARS
+  Assets:AR:Bank:Primary:USD         0.00 USD
+  Assets:AR:Bank:Secondary:ARS       0.00 ARS
+  Assets:AR:Bank:Wallet:ARS          0.00 ARS
+  Assets:AR:Cash:ARS                 0.00 ARS
+  Assets:AR:Cash:USD                 0.00 USD
+  Liabilities:AR:CreditCard:Primary  0.00 ARS
+  Liabilities:AR:CreditCard:Secondary 0.00 ARS
+  Equity:Opening-Balances

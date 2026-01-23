@@ -1,0 +1,48 @@
+; ═══════════════════════════════════════════════════════════════
+; Opciones Globales y Plugins
+; open-gasti - Starter Kit Argentina
+; ═══════════════════════════════════════════════════════════════
+
+option "title" "open-gasti - Finanzas Personales Argentina"
+option "operating_currency" "ARS"
+option "render_commas" "TRUE"
+option "inferred_tolerance_default" "*:0.01"
+
+; ─────────────────────────────────────────────────────────────────
+; Plugins
+; ─────────────────────────────────────────────────────────────────
+
+; Auto-create accounts from transactions
+plugin "beancount.plugins.auto_accounts"
+
+; Validate commodity declarations
+plugin "beancount.plugins.check_commodity"
+
+; Ensure cost basis consistency
+plugin "beancount.plugins.coherent_cost"
+
+; Unrealized gains (uncomment when you have regular price updates)
+; plugin "beancount.plugins.unrealized" "Income:Unrealized"
+
+; Custom plugins (see docs/SCRIPTING.md for how to write your own)
+; plugin "plugins.your_custom_plugin"
+
+; ─────────────────────────────────────────────────────────────────
+; Commodities
+; ─────────────────────────────────────────────────────────────────
+
+2020-01-01 commodity ARS
+  name: "Argentine Peso"
+
+2020-01-01 commodity USD
+  name: "US Dollar"
+
+; ─────────────────────────────────────────────────────────────────
+; Fava Options
+; ─────────────────────────────────────────────────────────────────
+
+2020-01-01 custom "fava-option" "language" "es"
+2020-01-01 custom "fava-option" "show-accounts-with-zero-balance" "false"
+2020-01-01 custom "fava-option" "show-accounts-with-zero-transactions" "false"
+2020-01-01 custom "fava-option" "uptodate-indicator-grey-lookback-days" "60"
+2020-01-01 custom "fava-option" "sidebar-show-queries" "5"
