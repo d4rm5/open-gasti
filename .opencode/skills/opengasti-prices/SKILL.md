@@ -1,9 +1,9 @@
 ---
-name: gasti-prices
+name: opengasti-prices
 description: Fetch and update blue dollar exchange rate from DolarAPI for beancount personal finance. Use when user asks for dollar rate, cotización, dólar blue, actualizar precios, or price updates. Triggers: '/prices', '/dolar', '/cotizacion'.
 ---
 
-# gasti-prices
+# opengasti-prices
 
 Update the Argentine blue dollar exchange rate in your beancount ledger using DolarAPI.
 

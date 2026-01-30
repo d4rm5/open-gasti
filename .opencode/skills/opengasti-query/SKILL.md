@@ -1,9 +1,9 @@
 ---
-name: gasti-query
+name: opengasti-query
 description: Natural language queries for beancount personal finance. Translates Spanish questions to BQL and executes with bean-query. Use for queries like 'cuánto gasté este mes', 'gastos por categoría', 'transacciones recientes'. Triggers: '/query', 'cuánto', 'gasté', 'ingresos', 'gastos'.
 ---
 
-# gasti-query
+# opengasti-query
 
 Natural language interface for querying your personal finances in Beancount.
 

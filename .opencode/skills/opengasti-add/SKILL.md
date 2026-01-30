@@ -1,9 +1,9 @@
 ---
-name: gasti-add
+name: opengasti-add
 description: Add transactions to beancount ledger from Spanish natural language. Parses expenses, income, transfers in Argentine pesos (ARS) and dollars (USD). Use when user says 'gasté', 'pagué', 'cobré', 'compré', 'transferí', or any transaction input. Triggers: '/add', '/gasto', '/ingreso', 'gasté', 'pagué'.
 ---
 
-# gasti-add
+# opengasti-add
 
 Este skill permite agregar transacciones al libro mayor de Beancount a partir de entrada en lenguaje natural en español.
 

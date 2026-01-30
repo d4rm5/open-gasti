@@ -1,9 +1,9 @@
 ---
-name: gasti-balance
+name: opengasti-balance
 description: Check account balances and net worth in USD for beancount personal finance. Use when user asks for balance, patrimonio, saldo, cuánto tengo, or net worth queries. Triggers: '/balance', '/patrimonio', '/saldo', '/net-worth'.
 ---
 
-# gasti-balance
+# opengasti-balance
 
 This skill allows you to quickly check your account balances and net worth using the beancount system.
 
