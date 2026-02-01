@@ -159,6 +159,7 @@ uv run python scripts/fetch_prices.py --casa oficial
 - [WORKFLOWS.md](docs/WORKFLOWS.md) - Flujos de trabajo con AI
 - [SCRIPTING.md](docs/SCRIPTING.md) - Escribir plugins custom
 - [MCP.md](docs/MCP.md) - Integración con Claude/GPT
+- [LLM-SETUP-GUIDE.md](docs/LLM-SETUP-GUIDE.md) - Guía para asistentes AI que configuren este repo
 
 ## API Utilizada
 
