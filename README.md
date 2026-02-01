@@ -13,7 +13,31 @@ Diseñado para manejar **pesos (ARS)** y **dólares (USD)** con cotización blue
 - ✅ Integración con AI (OpenCode/Takopi) para agregar transacciones
 - ✅ Todo manejado con `uv` (sin pip, sin virtualenv manual)
 
-## Quick Start
+## Setup with AI Assistant 🤖
+
+**We strongly recommend letting an AI agent handle the customization. Humans make mistakes.**
+
+### For Humans
+
+Copy and paste this prompt to your LLM agent (ChatGPT, Claude, Cursor, Windsurf):
+
+```text
+I have cloned the `open-gasti` repository. Please read the `docs/LLM-SETUP-GUIDE.md` file and help me customize the configuration for my personal finances.
+
+1. Help me rename the accounts in `config/accounts.bean` to match my real banks.
+2. Help me set my opening balances in `transactions/balances.bean`.
+3. Explain how to add my first transaction.
+```
+
+### For LLM Agents
+
+Read the setup guide and follow the customization checklist:
+
+```bash
+cat docs/LLM-SETUP-GUIDE.md
+```
+
+## Quick Start (Manual)
 
 ### 1. Requisitos
 
